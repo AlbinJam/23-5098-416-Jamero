@@ -1,60 +1,221 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Link to Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-.topnav {
-  overflow: hidden;
-  background-color: #333;
-}
+  <style>
+    /* General Styles */
+    body {
+        margin: 0;
+        font-family: 'Roboto', sans-serif;
+        background-color: #f4f4f4; /* Light background color */
+        color: #333; /* Dark text color */
+    }
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
+    * {
+        box-sizing: border-box;
+    }
 
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
+    /* Navigation Bar */
+    .topnav {
+        overflow: hidden;
+        background-color: #007bb8;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 15px 0;
+    }
 
-/* Highlight the active link */
-.topnav a.active {
-  background-color: #04AA6D;
-  color: white;
-}
+    .topnav a {
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 18px;
+    }
 
-/* Create a right-aligned (split) link inside the navigation bar */
-.topnav a.split {
-  float: right;
-  background-color: #04AA6D;
-  color: white;
-}
-</style>
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .topnav a.active {
+        background-color: #00bcd4;
+        color: white;
+    }
+
+    /* Hero Section */
+    .hero {
+        background-image: url('https://img.freepik.com/premium-photo/soft-blurred-gym-background-active-fitness-equipment-strong-workout-mood_217468-30272.jpg');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: #a3d2e2; /* Light blue text color */
+        padding: 0 20px;
+    }
+
+    .hero h1 {
+        font-size: 60px;
+        margin: 0;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero p {
+        font-size: 24px;
+        margin-top: 20px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Section Styles */
+    section {
+        padding: 50px 20px;
+        text-align: center;
+    }
+
+    h2 {
+        font-size: 36px;
+        color: #007bb8;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    /* Call-to-action Button */
+    .cta-button {
+        background-color: #00bcd4;
+        color: white;
+        padding: 15px 25px;
+        font-size: 18px;
+        border: none;
+        cursor: pointer;
+        margin-top: 20px;
+        border-radius: 5px;
+    }
+
+    .cta-button:hover {
+        background-color: #007bb8;
+    }
+
+    /* Flexbox Layout for About */
+    .about {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .about div {
+        width: 80%;
+        padding: 20px;
+        background-color: #fff;
+        margin: 10px 0;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Media Queries for Responsiveness */
+    @media (max-width: 768px) {
+        .topnav {
+            flex-direction: column;
+        }
+
+        .hero h1 {
+            font-size: 40px;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+        .about div {
+            width: 100%;
+        }
+
+        .cta-button {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero h1 {
+            font-size: 30px;
+        }
+
+        .hero p {
+            font-size: 16px;
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+
+        .cta-button {
+            padding: 12px 20px;
+        }
+    }
+  </style>
 </head>
 <body>
 
+<!-- Navigation Bar -->
 <div class="topnav">
-  <a class="active" href="#home" id="home">Home</a>
-  <a href="#about" id="about">About</a>
-  <a href="#services" id="services">Services</a>
-  <a href="#contact" id="contact">Contact</a>
-  <a href="#help" class="split" id="help">Help</a>
+  <a class="active" href="#home" id="homeLink">Home</a>
+  <a href="#about" id="aboutLink">About</a>
+  <a href="#services" id="servicesLink">Services</a>
+  <a href="#contact" id="contactLink">Contact</a>
 </div>
 
-<div style="padding-left:16px">
-  <h2>Ben's Company</h2>
-  <p>Welcome!</p>
+<!-- Hero Section -->
+<div class="hero" id="home">
+  <div>
+    <h1>Ben's Fitness</h1>
+    <p>No Pain, No Gain!</p>
+    <button class="cta-button">Join Us Now</button>
+  </div>
 </div>
+
+<!-- About Section -->
+<section id="about">
+  <h2>About Us</h2>
+  <div>
+    <p>Welcome to Ben's Private Gym, where strength, dedication, and growth meet. Launched on February 3, 2025, our gym is not just a place to work out—it's a community built on pushing limits and achieving goals. Owned by Albin Nathaniel Jamero, a 19-year-old passionate gym enthusiast, our mission is to inspire and motivate the younger generation to take charge of their fitness journey.</p>
+    <p>At Ben's Private Gym, we live by the slogan "No Pain, No Gain!"—because we believe in hard work, commitment, and perseverance. Whether you're just starting your fitness journey or you're already a seasoned athlete, we're here to support you every step of the way in a private, focused, and high-energy environment. Join us today and unlock your full potential!</p>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section id="services">
+  <h2>Our Services</h2>
+  <div>
+    <h3>Personal Training</h3>
+    <p>One-on-one sessions with experienced trainers to achieve your fitness goals faster.</p>
+    <p>You can also have the chance to train with Mr. Albin Nathaniel Jamero.</p>
+  </div>
+  <div>
+    <h3>Group Classes</h3>
+    <p>Join our energetic group classes designed for all fitness levels.</p>
+  </div>
+  <div>
+    <h3>Nutrition Guidance</h3>
+    <p>Get personalized nutrition plans to complement your workout and lifestyle.</p>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>If you have any questions or want to get in touch with us, feel free to reach out!</p>
+  <button class="cta-button">Contact Us</button>
+</section>
 
 <script>
 // Get all navigation links
@@ -62,17 +223,38 @@ const links = document.querySelectorAll('.topnav a');
 
 // Function to remove the active class from all links
 function removeActiveClass() {
-  links.forEach(link => {
-    link.classList.remove('active');
-  });
+    links.forEach(link => {
+        link.classList.remove('active');
+    });
 }
 
-// Add event listeners to each link
-links.forEach(link => {
-  link.addEventListener('click', function() {
-    removeActiveClass(); // Remove active class from all links
-    this.classList.add('active'); // Add active class to the clicked link
-  });
+// Handle section switching
+document.getElementById('homeLink').addEventListener('click', function(e) {
+    e.preventDefault();
+    removeActiveClass();
+    this.classList.add('active');
+    document.getElementById('home').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById('aboutLink').addEventListener('click', function(e) {
+    e.preventDefault();
+    removeActiveClass();
+    this.classList.add('active');
+    document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById('servicesLink').addEventListener('click', function(e) {
+    e.preventDefault();
+    removeActiveClass();
+    this.classList.add('active');
+    document.getElementById('services').scrollIntoView({ behavior: 'smooth' });
+});
+
+document.getElementById('contactLink').addEventListener('click', function(e) {
+    e.preventDefault();
+    removeActiveClass();
+    this.classList.add('active');
+    document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
 });
 </script>
 
